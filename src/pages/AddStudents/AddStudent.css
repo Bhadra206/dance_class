@@ -1,0 +1,76 @@
+.add-students-container {
+  /* height: 100vh; Full screen height */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  flex-direction: column;  /* Stack vertically */
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+}
+
+.add-students-container h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #1f2937;
+}
+
+.students-table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.students-table th,
+.students-table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.students-table th {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+.students-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actions button {
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.accept {
+  background-color: #22c55e;
+  color: white;
+}
+
+.accept:hover {
+  background-color: #16a34a;
+}
+
+.reject {
+  background-color: #ef4444;
+  color: white;
+}
+
+.reject:hover {
+  background-color: #dc2626;
+}
