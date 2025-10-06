@@ -20,11 +20,13 @@ const Registration: React.FC = () => {
     fatherPhone: "",
     motherName: "",
     motherOccupation: "",
-    motherPhone:"",
+    motherPhone: "",
     siblings: "",
     school: "",
     branch: "",
     course: "",
+    batch: "",
+    time: "",
   });
 
   const handleChange = (
@@ -33,8 +35,11 @@ const Registration: React.FC = () => {
     >
   ) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,  // Just save value directly
+    }));
+  };  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,15 +53,10 @@ const Registration: React.FC = () => {
       "religion",
       "caste",
       "nationality",
-      "fatherName",
-      "fatherOccupation",
-      "fatherPhone",
-      "motherName",
-      "motherOccupation",
-      "motherPhone",
-      "siblings",
       "branch",
       "course",
+      "batch",
+      "time",
     ];
 
     for (let field of requiredFields) {
@@ -74,28 +74,6 @@ const Registration: React.FC = () => {
       alert("Registration submitted for admin approval!");
       console.log("Server response:", res.data);
 
-      // Optionally reset form
-      // setFormData({
-      //   name: "",
-      //   address: "",
-      //   phone: "",
-      //   email: "",
-      //   dob: "",
-      //   gender: "",
-      //   religion: "",
-      //   caste: "",
-      //   nationality: "",
-      //   fatherName: "",
-      //   fatherOccupation: "",
-      //   fatherPhone: "",
-      //   motherName: "",
-      //   motherOccupation: "",
-      //   motherPhone:"",
-      //   siblings: "",
-      //   school: "",
-      //   branch: "",
-      //   course: "",
-      // });
     } catch (error) {
       console.error("Form submission error:", error);
       alert("Something went wrong. Please try again later.");
@@ -107,6 +85,12 @@ const Registration: React.FC = () => {
   const [branchOptions, setBranchOptions] = useState<
     { _id: string; branch: string }[]
   >([]);
+  const [batchOptions, setBatchOptions] = useState<
+    { _id: string; batch: string }[]
+  >([]);
+  const [timeOptions, setTimeOptions] = useState<
+    { _id: string; time: string }[]
+  >([]);
 
   useEffect(() => {
     axios.get("http://localhost:4000/api/course").then((res) => {
@@ -115,6 +99,14 @@ const Registration: React.FC = () => {
 
     axios.get("http://localhost:4000/api/branch").then((res) => {
       setBranchOptions(res.data);
+    });
+
+    axios.get("http://localhost:4000/api/batch").then((res) => {
+      setBatchOptions(res.data);
+      console.log("Fetched Batches:", res.data);
+    });
+    axios.get("http://localhost:4000/api/time").then((res) => {
+      setTimeOptions(res.data);
     });
   }, []);
 
@@ -292,6 +284,30 @@ const Registration: React.FC = () => {
               {branchOptions.map((branchObj) => (
                 <option key={branchObj._id} value={branchObj.branch}>
                   {branchObj.branch}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Batch:</label>
+            <select name="batch" value={formData.batch} onChange={handleChange}>
+              <option value="">Select Batch</option>
+              {batchOptions.map((batchObj) => (
+                <option key={batchObj._id} value={batchObj._id}>
+                  {batchObj.batch}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label>Time:</label>
+            <select name="time" value={formData.time} onChange={handleChange}>
+              <option value="">Select Time</option>
+              {timeOptions.map((timeObj) => (
+                <option key={timeObj._id} value={timeObj._id}>
+                  {timeObj.time}
                 </option>
               ))}
             </select>

@@ -1,0 +1,99 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+.heading {
+  font-size: 2rem;
+  color: #263d5e;
+  margin-top: 10px;
+  font-family: "Kavoon", cursive;
+}
+
+.heading-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 80px;
+  }
+  
+  .fees-button {
+    padding: 8px 16px;
+    background-color: #06b6d4;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .fees-button:hover {
+    background-color: #0891b2;
+  }
+  
+  .delete-button {
+    margin-left: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+  
+.staff-details-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .staff-details-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .staff-table-container {
+    overflow-x: auto;
+  }
+  
+  .staff-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .staff-details-table th, .staff-details-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .staff-details-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  .staff-details-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .staff-details-table td {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .staff-details-table td:first-child {
+    font-weight: bold;
+  }
+  
+  .staff-details-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  

@@ -110,9 +110,9 @@
 /* Submit Button */
 .submit-btn {
   display: block;
-  margin: 20px auto; /* Centers horizontally */
-  width: 100%; /* Adjust width */
-  max-width: 800px; /* Prevents button from getting too large */
+  margin: 20px auto; 
+  width: 100%;
+  max-width: 800px;
   background: #44c2e1;
   color: white;
   padding: 12px;
@@ -124,7 +124,7 @@
 }
 
 .submit-btn:hover {
-  background: #44c2e1;
+  background: #3395ad;
 }
 
 /* Responsive Design */
@@ -192,9 +192,9 @@
 
   .submit-btn {
     display: block;
-    margin: 100px auto; /* Centers horizontally */
-    width: 100%; /* Adjust width */
-    max-width: 800px; /* Prevents button from getting too large */
+    margin: 100px auto; 
+    width: 100%; 
+    max-width: 800px;
   }
 }
 
@@ -263,8 +263,8 @@
   }
 
   .submit-btn {
-    width: 90%; /* Full width on very small screens */
-    font-size: 0.9rem; /* Slightly smaller text */
-    padding: 10px; /* Adjust padding */
+    width: 90%; 
+    font-size: 0.9rem; 
+    padding: 10px;
   }
 }

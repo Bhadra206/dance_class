@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import Navbar from "../Navbar/Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./StudentSummary.css";
@@ -40,8 +41,11 @@ const StudentSummary: React.FC = () => {
         console.error("Error fetching students", err);
       }
     };
-    fetchStudents();
-  }, []);
+
+    if (course && branch) {
+      fetchStudents();
+    }
+  }, [course, branch]);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -59,12 +63,18 @@ const StudentSummary: React.FC = () => {
     );
     setFilteredStudents(filtered);
   }, [searchTerm, students]);
-  
 
   return (
     <div className="student-summary-container">
+      <Navbar />
       <div className="student-header">
-        <button onClick={() => navigate("/AddStudent?course=Bharatanatyam&branch=Muvattupuzha")}>Add Students</button>
+        <button
+          onClick={() =>
+            navigate(`/AddStudent?course=${course}&branch=${branch}`)
+          }
+        >
+          Add Students
+        </button>
         <h1 className="title">Students</h1>
         <div className="search-container" ref={searchRef}>
           <span
@@ -104,7 +114,7 @@ const StudentSummary: React.FC = () => {
             </div>
             <button
               className="view-btn"
-              onClick={() => navigate(`/student/${student._id}`)}
+              onClick={() => navigate(`/studentDetails/${student._id}`)}
             >
               View Details
             </button>

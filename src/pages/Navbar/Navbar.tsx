@@ -3,13 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useCourseBranch } from "../CourseBranchContext/CourseBranchContext";
 
 const Navbar: React.FC = () => {
   const [masterOpen, setMasterOpen] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    // your logout logic here
+    navigate("/");
+  };
+
+  const { course, branch } = useCourseBranch();
+
+  const handleReportNav = (path: string) => {
+    if (!course || !branch) {
+      alert("Please select Course and Branch from the Dashboard first.");
+      navigate("/adminDashboard");
+    } else {
+      navigate(path);
+    }
   };
 
   return (
@@ -28,28 +42,31 @@ const Navbar: React.FC = () => {
           {masterOpen && (
             <ul className="dropdown">
               <li>
-                <Link to="#">School Details</Link>
+                <Link to="/batchDetails">Batch Details</Link>
               </li>
               <li>
-                <Link to="#">Batch Details</Link>
+                <Link to="/courseDetails">Course Details</Link>
               </li>
               <li>
-                <Link to="#">Course Details</Link>
+                <Link to="/branchDetails">Branch Details</Link>
               </li>
               <li>
-                <Link to="#">Branch Details</Link>
+                <Link to="/students">Student Details</Link>
+              </li>
+              {/* <li>
+                <Link to="/staff">Staff Details</Link>
+              </li> */}
+              <li onClick={() => handleReportNav("/leavestudent")}>
+                Inactive Students
               </li>
               <li>
-                <Link to="#">Student Details</Link>
+                <Link to="/adminDetails">Admin Details</Link>
+              </li>
+              <li onClick={() => handleReportNav("/leaveApproval")}>
+                Leave Applied
               </li>
               <li>
-                <Link to="#">Staff Details</Link>
-              </li>
-              <li>
-                <Link to="#">Leave Applied</Link>
-              </li>
-              <li>
-                <Link to="#">Change Password</Link>
+                <Link to="/changePassword">Change Password</Link>
               </li>
             </ul>
           )}
@@ -63,27 +80,28 @@ const Navbar: React.FC = () => {
           Reports
           {reportOpen && (
             <ul className="dropdown">
-              <li>
-                <Link to="/course-report">Course Report</Link>
+              <li onClick={() => handleReportNav("/pastStudentReport")}>
+                Past Student Report
               </li>
               <li>
-                <Link to="/batch-report">Batch Report</Link>
+                <Link to="/courseReport">Course Report</Link>
               </li>
               <li>
-                <Link to="/registration-report">Registration Report</Link>
+                <Link to="/batchReport">Batch Report</Link>
               </li>
               <li>
-                <Link to="/receipt-report">Receipt Report</Link>
+                <Link to="/branchReport">Branch Report</Link>
               </li>
-              <li>
-                <Link to="/suspend-report">Suspend Report</Link>
+              <li onClick={() => handleReportNav("/registrationReport")}>
+                Registration Report
               </li>
-              <li>
-                <Link to="/dues-report">Dues Report</Link>
+              <li onClick={() => handleReportNav("/leaveReport")}>
+                Leave Report
               </li>
-              <li>
-                <Link to="/cash-book">Cash Book</Link>
-              </li>
+              {/* <li onClick={() => handleReportNav("/duesReport")}>
+                Dues Report
+              </li> */}
+              <li onClick={() => handleReportNav("/cashBook")}>Cash Book</li>
             </ul>
           )}
         </li>

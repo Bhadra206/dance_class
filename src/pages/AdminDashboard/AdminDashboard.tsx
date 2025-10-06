@@ -13,12 +13,12 @@ const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/courses").then((res) => {
+    axios.get("http://localhost:4000/api/course").then((res) => {
       const courseNames = res.data.map((course: any) => course.course);
       setCourses(courseNames);
     });
 
-    axios.get("http://localhost:5000/branches").then((res) => {
+    axios.get("http://localhost:4000/api/branch").then((res) => {
       const branchNames = res.data.map((branch: any) => branch.branch);
       setBranches(branchNames);
     });
@@ -27,7 +27,7 @@ const AdminDashboard: React.FC = () => {
   const handleEnter = () => {
     if (selectedCourse && selectedBranch) {
       navigate(
-        `/student-details?course=${encodeURIComponent(
+        `/students?course=${encodeURIComponent(
           selectedCourse
         )}&branch=${encodeURIComponent(selectedBranch)}`
       );

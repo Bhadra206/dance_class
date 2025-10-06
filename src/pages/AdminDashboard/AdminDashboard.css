@@ -21,14 +21,14 @@ body {
 
 .welcome-page h2 {
   font-size: 2rem;
-  color: #1e2a3b;
+  color: #263d5e;
   margin-top: 10px;
   font-family: "Kavoon", cursive;
 }
 
 .form-card {
   background: white;
-  padding: 30px 40px;
+  padding: 50px 40px;
   border-radius: 20px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
   display: flex;

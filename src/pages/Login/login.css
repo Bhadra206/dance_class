@@ -114,6 +114,19 @@
   color: gray;
   font-size: 1rem;
 }
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+.password-toggle-icon {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  margin-right: 50px;
+  transform: translateY(-50%);
+  color: #333;
+}
+
 
 /* Login Button */
 .login-button {

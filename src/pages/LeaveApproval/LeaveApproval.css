@@ -1,0 +1,64 @@
+.leave-approval-container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: "Segoe UI", sans-serif;
+    margin-top: 120px;
+  }
+  
+  .leave-approval-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #263d5e;
+    font-family: "Kavoon", cursive;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .leave-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .leave-table th,
+  .leave-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .leave-table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .status-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .approve-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .reject-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  

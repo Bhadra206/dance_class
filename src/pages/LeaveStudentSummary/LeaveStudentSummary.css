@@ -1,0 +1,164 @@
+/* body {
+  background-image: url("/Dance9.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+} */
+.lstudent-summary-container {
+    padding: 6rem 2rem 2rem 2rem;
+  } 
+  
+  .lstudent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #263d5e;
+    font-family: "Kavoon", cursive;
+    margin: 0;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .lstudent-header button {
+    background-color: #06b6d4; /* cyan-500 */
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .lstudent-header button:hover {
+    background-color: #0891b2; /* cyan-600 */
+  }
+  
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    margin-left: 300px;
+  }
+  
+  .search-icon {
+    cursor: pointer;
+    color: #314a6c;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  
+  .search-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .student-search-dropdown {
+    position: absolute;
+    right: 0;
+    top: 130%;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .student-cards-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .student-card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    transition: box-shadow 0.3s;
+  }
+  
+  .student-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .student-card h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .student-info {
+    font-size: 0.875rem;
+    color: #4b5563; /* gray-600 */
+    margin-bottom: 0.75rem;
+  }
+  
+  .badge-container {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .badge.active {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .badge.inactive {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .badge.paid {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .badge.unpaid {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  
+  .view-btn {
+    background-color: #aeafb0;
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .view-btn:hover {
+    background-color: #e5e7eb;
+  }
+  
